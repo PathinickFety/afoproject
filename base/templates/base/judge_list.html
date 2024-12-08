@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>Judges</h1>
+<ul>
+    {% for judge in judges %}
+        <li>{{ judge.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>Participants</h1>
+<a href="{% url 'participant_create' %}" class="btn">Add Participant</a>
+<ul>
+    {% for participant in participants %}
+        <li>
+            <img src="{{ participant.picture.url }}" alt="{{ participant.name }}" width="50">
+            <a href="{% url 'participant_detail' participant.pk %}">{{ participant.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>Teams</h1>
+<a href="{% url 'team_create' %}" class="btn">Add Team</a>
+<ul>
+    {% for team in teams %}
+        <li>{{ team }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

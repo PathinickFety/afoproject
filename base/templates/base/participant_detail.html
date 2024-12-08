@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>{{ participant.name }}</h1>
+<img src="{{ participant.picture.url }}" alt="{{ participant.name }}" width="200">
+<p>Age: {{ participant.age }}</p>
+<p>Dance Style: {{ participant.dance_style }}</p>
+<a href="{% url 'participant_update' participant.pk %}" class="btn">Edit</a>
+<form action="{% url 'participant_delete' participant.pk %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+<a href="{% url 'participant_list' %}" class="btn">Back to List</a>
+{% endblock %}

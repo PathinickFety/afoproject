@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>{{ battle.title }}</h1>
+<p><strong>Teams:</strong> {{ battle.team_one }} vs {{ battle.team_two }}</p>
+<a href="{% url 'battle_update' battle.id %}">Update</a>
+<a href="{% url 'battle_delete' battle.id %}">Delete</a>
+<p><strong>Winner:</strong> {% if battle.winner %}{{ battle.winner }}{% else %}Waiting for result{% endif %}</p>
+<h2>Judges</h2>
+<ul>
+    {% for judge in battle.judges.all %}
+        <li>{{ judge.name }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'judge_vote' battle.pk %}" class="btn">Judge Votes</a>
+<a href="{% url 'battle_list' %}" class="btn">Back to List</a>
+{% endblock %}

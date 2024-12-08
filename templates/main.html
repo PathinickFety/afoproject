@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All of One 2</title>
+</head>
+<body>
+    <body>
+    <header>
+        <nav>
+            <a href="{% url 'participant_list' %}">Participants</a>
+            <a href="{% url 'team_list' %}">Teams</a>
+            <a href="{% url 'judge_list' %}">Judges</a>
+            <a href="{% url 'battle_list' %}">Battles</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+
+
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; All for One 2024</p>
+    </footer>
+</body>
+</html>

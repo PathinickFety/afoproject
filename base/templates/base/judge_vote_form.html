@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>Judge Voting for {{ battle }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Submit Vote</button>
+</form>
+<a href="{% url 'battle_detail' battle.pk %}" class="btn">Back to Battle</a>
+{% endblock %}

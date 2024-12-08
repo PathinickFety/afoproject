@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>Battles</h1>
+<a href="{% url 'battle_create' %}">Create battle</a>
+<ul>
+    {% for battle in battles %}
+        <li>
+            <a href="{% url 'battle_detail' battle.pk %}">{{ battle }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
